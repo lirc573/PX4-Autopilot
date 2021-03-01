@@ -71,6 +71,7 @@
 
 #include <matrix/matrix/math.hpp>
 #include <uORB/topics/vehicle_actuator_setpoint.h>
+#include <mathlib/math/Limits.hpp>
 
 class ControlAllocation
 {
