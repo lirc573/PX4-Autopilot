@@ -47,6 +47,7 @@
 #include <uORB/Subscription.hpp>
 #include <uORB/SubscriptionInterval.hpp>
 #include <uORB/topics/parameter_update.h>
+#include <uORB/topics/actuator_failure.h>
 
 using namespace time_literals;
 
@@ -74,13 +75,16 @@ public:
 	} MultirotorGeometry;
 
 	static int computeEffectivenessMatrix(const MultirotorGeometry &geometry,
-					      matrix::Matrix<float, NUM_AXES, NUM_ACTUATORS> &effectiveness);
+					      matrix::Matrix<float, NUM_AXES, NUM_ACTUATORS> &effectiveness,
+					      actuator_failure_s actuator_failure);
 
 	bool getEffectivenessMatrix(matrix::Matrix<float, NUM_AXES, NUM_ACTUATORS> &matrix) override;
 
 	int numActuators() const override { return _num_actuators; }
 private:
 	uORB::SubscriptionInterval _parameter_update_sub{ORB_ID(parameter_update), 1_s};
+
+	uORB::Subscription _actuator_failure_sub{ORB_ID(actuator_failure)};
 
 	bool _updated{true};
 	int _num_actuators{0};

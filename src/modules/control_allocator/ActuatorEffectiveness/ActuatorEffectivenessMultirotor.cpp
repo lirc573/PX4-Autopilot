@@ -50,7 +50,9 @@ bool
 ActuatorEffectivenessMultirotor::getEffectivenessMatrix(matrix::Matrix<float, NUM_AXES, NUM_ACTUATORS> &matrix)
 {
 	// Check if parameters have changed
-	if (_updated || _parameter_update_sub.updated()) {
+	actuator_failure_s actuator_failure;
+
+	if (_updated || _parameter_update_sub.updated() || _actuator_failure_sub.update(&actuator_failure)) {
 		// clear update
 		parameter_update_s param_update;
 		_parameter_update_sub.copy(&param_update);
@@ -132,7 +134,7 @@ ActuatorEffectivenessMultirotor::getEffectivenessMatrix(matrix::Matrix<float, NU
 		geometry.rotors[7].thrust_coef = _param_ca_mc_r7_ct.get();
 		geometry.rotors[7].moment_ratio = _param_ca_mc_r7_km.get();
 
-		_num_actuators = computeEffectivenessMatrix(geometry, matrix);
+		_num_actuators = computeEffectivenessMatrix(geometry, matrix, actuator_failure);
 		return true;
 	}
 
@@ -141,7 +143,8 @@ ActuatorEffectivenessMultirotor::getEffectivenessMatrix(matrix::Matrix<float, NU
 
 int
 ActuatorEffectivenessMultirotor::computeEffectivenessMatrix(const MultirotorGeometry &geometry,
-		matrix::Matrix<float, NUM_AXES, NUM_ACTUATORS> &effectiveness)
+		matrix::Matrix<float, NUM_AXES, NUM_ACTUATORS> &effectiveness,
+		actuator_failure_s actuator_failure)
 {
 	int num_actuators = 0;
 
