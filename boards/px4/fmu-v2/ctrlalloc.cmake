@@ -69,7 +69,7 @@ px4_add_board(
 	MODULES
 		airspeed_selector
 		angular_velocity_controller
-		attitude_estimator_q
+		#attitude_estimator_q
 		battery_status
 		#camera_feedback
 		commander
