@@ -36,9 +36,9 @@ then
 
     # Set according to actual vehicle model
     param set VM_MASS 2.66
-    param set VM_INERTIA_XX 0.06
-    param set VM_INERTIA_YY 0.06
-    param set VM_INERTIA_ZZ 0.10
+    param set VM_INERTIA_XX 0.029125
+    param set VM_INERTIA_YY 0.029125
+    param set VM_INERTIA_ZZ 0.055225
 
     param set CA_AIRFRAME 0
     param set CA_METHOD 1
