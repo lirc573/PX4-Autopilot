@@ -324,21 +324,21 @@ ControlAllocator::Run()
 	// _actuator_effectiveness->setFlightPhase(flight_phase);
 	// }
 
-	if (_airspeed_sub.updated()) {
-		airspeed_validated_s airspeed = {};
+	// if (_airspeed_sub.updated()) {
+	// 	airspeed_validated_s airspeed = {};
 
-		_airspeed_sub.update(&airspeed);
+	// 	_airspeed_sub.update(&airspeed);
 
-		float div = _thrust_sp(0) / (-_thrust_sp(2) + 0.001f);
-		float tilt = math::constrain(atanf(div), 0.0f, 0.8f);
-		_control_allocation->set_tilt_trim(tilt);
+	// 	float div = _thrust_sp(0) / (-_thrust_sp(2) + 0.001f);
+	// 	float tilt = math::constrain(atanf(div), 0.0f, 0.8f);
+	// 	_control_allocation->set_tilt_trim(tilt);
 
-		if (PX4_ISFINITE(airspeed.equivalent_airspeed_m_s)) {
-			float used_airspeed = math::constrain(airspeed.equivalent_airspeed_m_s, _param_airspeed_min.get(),
-							      _param_airspeed_max.get());
-			_actuator_effectiveness->updateAirspeedTilt(used_airspeed, tilt);
-		}
-	}
+	// 	if (PX4_ISFINITE(airspeed.equivalent_airspeed_m_s)) {
+	// 		float used_airspeed = math::constrain(airspeed.equivalent_airspeed_m_s, _param_airspeed_min.get(),
+	// 						      _param_airspeed_max.get());
+	// 		_actuator_effectiveness->updateAirspeedTilt(used_airspeed, tilt);
+	// 	}
+	// }
 
 	// Guard against too small (< 0.2ms) and too large (> 20ms) dt's.
 	const hrt_abstime now = hrt_absolute_time();
