@@ -62,50 +62,60 @@ then
 
     # X: front, Y: right Z: down
     # KM: CCW: +ve, CW: -ve
+    # PZ: 4.6cm / 28.8cm
     # https://docs.px4.io/master/en/airframes/airframe_reference.html#octorotor-coaxial
 
     param set CA_MC_R0_PX 0.7071068
     param set CA_MC_R0_PY 0.7071068
+    param set CA_MC_R0_PZ 0.1597222
     param set CA_MC_R0_CT 12.523
     param set CA_MC_R0_KM 0.0135
 
     param set CA_MC_R1_PX 0.7071068
     param set CA_MC_R1_PY -0.7071068
+    param set CA_MC_R1_PZ 0.1597222
     param set CA_MC_R1_CT 12.523
     param set CA_MC_R1_KM -0.0135
 
     param set CA_MC_R2_PX -0.7071068
     param set CA_MC_R2_PY -0.7071068
+    param set CA_MC_R2_PZ 0.1597222
     param set CA_MC_R2_CT 12.523
     param set CA_MC_R2_KM 0.0135
 
     param set CA_MC_R3_PX -0.7071068
     param set CA_MC_R3_PY 0.7071068
+    param set CA_MC_R3_PZ 0.1597222
     param set CA_MC_R3_CT 12.523
     param set CA_MC_R3_KM -0.0135
 
     param set CA_MC_R4_PX 0.7071068
     param set CA_MC_R4_PY -0.7071068
+    param set CA_MC_R4_PZ 0.1597222
     param set CA_MC_R4_CT 12.523
     param set CA_MC_R4_KM 0.0135
 
     param set CA_MC_R5_PX 0.7071068
     param set CA_MC_R5_PY 0.7071068
+    param set CA_MC_R5_PZ 0.1597222
     param set CA_MC_R5_CT 12.523
     param set CA_MC_R5_KM -0.0135
 
     param set CA_MC_R6_PX -0.7071068
     param set CA_MC_R6_PY 0.7071068
+    param set CA_MC_R6_PZ 0.1597222
     param set CA_MC_R6_CT 12.523
     param set CA_MC_R6_KM 0.0135
 
     param set CA_MC_R7_PX -0.7071068
     param set CA_MC_R7_PY -0.7071068
+    param set CA_MC_R7_PZ 0.1597222
     param set CA_MC_R7_CT 12.523
     param set CA_MC_R7_KM -0.0135
 fi
 
 set MAV_TYPE 13
 
-# set MIXER hexa_x
+# set MIXER octo_cox
 set MIXER direct
+set PWM_OUT 12345678
