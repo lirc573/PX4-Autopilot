@@ -1,31 +1,3 @@
-# #!/bin/sh
-# #
-# # @name Generic 10" Octo coaxial geometry
-# #
-# # @type Octorotor Coaxial
-# # @class Copter
-# #
-# # @output MAIN1 motor 1
-# # @output MAIN2 motor 2
-# # @output MAIN3 motor 3
-# # @output MAIN4 motor 4
-# # @output MAIN5 motor 5
-# # @output MAIN6 motor 6
-# # @output MAIN7 motor 7
-# # @output MAIN8 motor 8
-# #
-# # @maintainer Lorenz Meier <lorenz@px4.io>
-# #
-# # @board intel_aerofc-v1 exclude
-# # @board bitcraze_crazyflie exclude
-# #
-
-# sh /etc/init.d/rc.mc_defaults
-
-# set MIXER octo_cox
-
-# set PWM_OUT 12345678
-
 #!/bin/sh
 #
 # @name Octo Coaxial
@@ -96,50 +68,50 @@ then
     param set CA_MC_R0_PX 0.7071068
     param set CA_MC_R0_PY 0.7071068
     param set CA_MC_R0_PZ 0.1597222
-    param set CA_MC_R0_CT 12.523
-    param set CA_MC_R0_KM 0.0135
+    param set CA_MC_R0_CT 11.7 # 12.523
+    param set CA_MC_R0_KM 0.137 # 0.0135
 
     param set CA_MC_R1_PX 0.7071068
     param set CA_MC_R1_PY -0.7071068
     param set CA_MC_R1_PZ 0.1597222
-    param set CA_MC_R1_CT 12.523
-    param set CA_MC_R1_KM -0.0135
+    param set CA_MC_R1_CT 11.7 # 12.523
+    param set CA_MC_R1_KM -0.137 # -0.0135
 
     param set CA_MC_R2_PX -0.7071068
     param set CA_MC_R2_PY -0.7071068
     param set CA_MC_R2_PZ 0.1597222
-    param set CA_MC_R2_CT 12.523
-    param set CA_MC_R2_KM 0.0135
+    param set CA_MC_R2_CT 11.7 # 12.523
+    param set CA_MC_R2_KM 0.137 # 0.0135
 
     param set CA_MC_R3_PX -0.7071068
     param set CA_MC_R3_PY 0.7071068
     param set CA_MC_R3_PZ 0.1597222
-    param set CA_MC_R3_CT 12.523
-    param set CA_MC_R3_KM -0.0135
+    param set CA_MC_R3_CT 11.7 # 12.523
+    param set CA_MC_R3_KM -0.137 # -0.0135
 
     param set CA_MC_R4_PX 0.7071068
     param set CA_MC_R4_PY -0.7071068
     param set CA_MC_R4_PZ 0.1597222
-    param set CA_MC_R4_CT 12.523
-    param set CA_MC_R4_KM 0.0135
+    param set CA_MC_R4_CT 11.7 # 12.523
+    param set CA_MC_R4_KM 0.137 # 0.0135
 
     param set CA_MC_R5_PX 0.7071068
     param set CA_MC_R5_PY 0.7071068
     param set CA_MC_R5_PZ 0.1597222
-    param set CA_MC_R5_CT 12.523
-    param set CA_MC_R5_KM -0.0135
+    param set CA_MC_R5_CT 11.7 # 12.523
+    param set CA_MC_R5_KM -0.137 # -0.0135
 
     param set CA_MC_R6_PX -0.7071068
     param set CA_MC_R6_PY 0.7071068
     param set CA_MC_R6_PZ 0.1597222
-    param set CA_MC_R6_CT 12.523
-    param set CA_MC_R6_KM 0.0135
+    param set CA_MC_R6_CT 11.7 # 12.523
+    param set CA_MC_R6_KM 0.137 # 0.0135
 
     param set CA_MC_R7_PX -0.7071068
     param set CA_MC_R7_PY -0.7071068
     param set CA_MC_R7_PZ 0.1597222
-    param set CA_MC_R7_CT 12.523
-    param set CA_MC_R7_KM -0.0135
+    param set CA_MC_R7_CT 11.7 # 12.523
+    param set CA_MC_R7_KM -0.137 # -0.0135
 fi
 
 set MAV_TYPE 13
